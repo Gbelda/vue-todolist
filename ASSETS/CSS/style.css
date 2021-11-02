@@ -5,13 +5,22 @@
 }
 
 #root{
-    width: 60%;
+    width: 35%;
     margin: auto;
 
 }
 
+ul{
+    padding: 30px 40px;
+}
+
 li{
-    list-style: none
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    padding: 5px 0px;
+    
 }
 
 
@@ -21,16 +30,36 @@ li{
 
 header{
     text-align: center;
+
+}
+
+#inputTodo,
+#submit{
+    height: 35px;
+    border-radius: 10px;
 }
 
 #inputTodo{
-    width: 250px;
-    height: 27px;
+    width: 300px;
     border: 1px solid gray;
-    border-radius: 5px;
     padding-left: 20px;
+}
+
+#submit{
+    width: 90px;
+    border: 1px solid gray;
+    margin-left: 10px;
+}
+
+.inputContainer{
+    padding: 20px 0px;
 }
 
 .noTask{
     color: red;
+}
+
+.container{
+    background-color: lightgray;
+    border-radius: 7px;
 }
