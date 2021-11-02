@@ -56,11 +56,11 @@
                 </div>
                 <!-- ./TO DO SECTION -->
 
-                <div class="completedContainer">
+                <div v-if='!complete' class="completedContainer">
                     <h2>
                         Completed
                     </h2>
-                    <ul v-show='!complete'>
+                    <ul>
                         <li v-for="(task, index) in completedTasks">
                             {{task}}
                             <div>
@@ -76,14 +76,14 @@
                 </div>
                 <!-- ./COMPLETED SECTION -->
 
-                <div class="trashbin">
+                <div v-show='!emptyBin' class="trashbin">
                     <h2>
                         Trashed
                         <span class="delete" @click="deleteAll">
                             (svuota cestino)
                         </span>
                     </h2>
-                    <ul v-show='!emptyBin'>
+                    <ul>
                         <li v-for="(task, index) in deletedTasks">
                             {{task}}
                             <div>

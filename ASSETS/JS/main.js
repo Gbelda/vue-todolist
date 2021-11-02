@@ -29,7 +29,9 @@ const app = new Vue({
             this.completedTasks.push(this.tasks[i])
             this.tasks.splice(i, 1)
             this.complete = false
-
+            if (this.tasks.length == 0) {
+                this.noTask = true
+            }
         },
         addTask() {
             if (this.newTask.length > 6) {
