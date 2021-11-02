@@ -19,32 +19,42 @@
                     <img :src="logoImg" alt="">
                 </div>
                 <div class="inputContainer">
-                    <input type="text" placeholder="Nuovo Todo" id="inputTodo">
-                    <input type="button" value="Aggiungi" id="submit">
+                    <input v-model="newTask" type="text"
+                        placeholder="Nuovo Todo"
+                        id="inputTodo">
+                    <input @click='addTask'type="button" value="Aggiungi"
+                        id="submit">
+                    <h3 v-show='error'>Devi inserire 6 o pi&uacute; caratteri</h3>
                 </div>
             </header>
-            <div class="container">
-                <ul class="card_container" v-if='!error'>
-                    <li v-for='(task, index) in tasks'>
-                        {{task}}
-                        <div>
-                            <span @click="checked(index)"
-                                :class="{checked:completedTasks.includes(index)}">
-                                <i class="fas fa-check-circle"></i>
-                            </span>
-                            <span @click='removeTask(index)'>
-                                <i class="fas
-                                    fa-times"></i>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="noTask">
-                    <h4 v-show='error'>
-                        Nulla da fare
-                    </h4>
+            <main>
+                <div class="taskContainer">
+                    <ul class="card_container" v-show='!complete'>
+                        <li v-for='(task, index) in tasks'>
+                            {{task}}
+                            <div>
+                                <span>
+                                    <i @click="checked(index)"
+                                        class="fas fa-check-circle"></i>
+                                </span>
+                                <span @click='removeTask(index)'>
+                                    <i class="fas
+                                        fa-times"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="noTask">
+                        <h4 v-show='complete'>
+                            Nulla da fare
+                        </h4>
+                    </div>
                 </div>
-            </div>
+                <div class="toDoContainer">
+
+                </div>
+            </main>
+
 
         </div>
 

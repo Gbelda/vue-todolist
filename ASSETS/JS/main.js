@@ -2,8 +2,10 @@ const app = new Vue({
     el: '#root',
     data: {
         logoImg: 'https://www.boolean.careers/images/misc/logo.png',
+        complete: false,
         error: false,
         completedTasks: [],
+        newTask: "",
         tasks: [
             'Fare i compiti',
             'Fare la spesa',
@@ -15,18 +17,29 @@ const app = new Vue({
         removeTask(i) {
             this.tasks.splice(i, 1)
             if (this.tasks.length == 0) {
-                return this.error = true
+                return this.complete = true
             }
         },
         checked(i) {
-            if (!this.completedTasks.includes(i)) {
-                this.completedTasks.push(i)
+            if (!this.completedTasks.includes(this.tasks[i])) {
+                this.completedTasks.push(this.tasks[i])
                 console.log(this.completedTasks);
-            } else {
+            } else if (this.completedTasks.includes(this.tasks[i])) {
                 this.completedTasks.splice(i, 1)
                 console.log(this.completedTasks);
             }
         },
+        addTask() {
+            if (this.newTask.length > 6) {
+                this.tasks.push(this.newTask)
+                this.error = false
+                this.newTask = ""
+                console.log(this.tasks);
+                this.complete = false
+            } else {
+                this.error = true
+            }
+        }
     },
 
 
