@@ -29,13 +29,14 @@
             </header>
             <main>
                 <div class="taskContainer">
-                    <ul class="card_container" v-show='!complete'>
+                    <ul class="card_container" v-show='!noTask'>
                         <li v-for='(task, index) in tasks'>
                             {{task}}
                             <div>
                                 <span>
                                     <i @click="checked(index)"
-                                        class="fas fa-check-circle"></i>
+                                        class="fas fa-check-circle"
+                                        :class="{checked:completedTasks.includes(task)}"></i>
                                 </span>
                                 <span @click='removeTask(index)'>
                                     <i class="fas
@@ -45,7 +46,7 @@
                         </li>
                     </ul>
                     <div class="noTask">
-                        <h4 v-show='complete'>
+                        <h4 v-show='noTask'>
                             Nulla da fare
                         </h4>
                     </div>

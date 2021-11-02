@@ -7,7 +7,7 @@
 #root{
     width: 60%;
     margin: auto;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ul{
@@ -19,8 +19,8 @@ li{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(199, 199, 199);
-    padding: 5px 0px;
-    
+    padding: 10px 0px;
+    font-size: 1.2rem;
 }
 
 
@@ -30,7 +30,7 @@ li{
 
 header{
     text-align: center;
-
+    padding-top: 100px;
 }
 
 #inputTodo,
@@ -70,6 +70,8 @@ h3,
     background-color: #F5F7F7;
     border-radius: 7px;
     min-height: 150px;
+    width: 50%;
+    margin: auto;
 }
 
 .checked{
