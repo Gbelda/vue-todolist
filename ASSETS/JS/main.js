@@ -27,7 +27,7 @@ const app = new Vue({
                 console.log(this.completedTasks);
 
             } else {
-                this.completedTasks.splice(i, 1)
+                this.completedTasks.splice(this.tasks[i], 1)
                 console.log(this.completedTasks);
             }
         },
