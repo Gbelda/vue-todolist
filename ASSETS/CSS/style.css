@@ -96,7 +96,7 @@ h2{
 
 main{
     display: flex;
-    justify-content: space-evenly;
+    
 }
 
 .delete{

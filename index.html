@@ -70,13 +70,10 @@
                             </div>
                         </li>
                     </ul>
-                    <h4 v-show='complete' class="complete">
-                        Lista completata vuota
-                    </h4>
                 </div>
                 <!-- ./COMPLETED SECTION -->
 
-                <div v-show='!emptyBin' class="trashbin">
+                <div v-if='!emptyBin' class="trashbin">
                     <h2>
                         Trashed
                         <span class="delete" @click="deleteAll">
@@ -93,9 +90,6 @@
                             </div>
                         </li>
                     </ul>
-                    <h4 v-show='emptyBin' class="emptyBin">
-                        Cestino vuoto
-                    </h4>
                 </div>
                 <!-- ./RECYCLEBIN SECTION -->
             </main>
