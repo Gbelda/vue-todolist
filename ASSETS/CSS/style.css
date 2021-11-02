@@ -5,7 +5,7 @@
 }
 
 #root{
-    width: 60%;
+    width: 100%;
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -55,25 +55,48 @@ header{
     padding: 20px 0px;
 }
 
-.noTask{
+.noTask,
+.emptyBin,
+.complete{
     text-align: center;
     line-height: 150px;
     
 }
 
 h3,
-.noTask{
+.noTask,
+.emptyBin,
+.complete{
     color: red;
 }
 
-.taskContainer{
+.taskContainer,
+.completedContainer,
+.trashbin{
     background-color: #F5F7F7;
     border-radius: 7px;
-    min-height: 150px;
-    width: 50%;
+    min-height: 300px;
+    width: 30%;
     margin: auto;
 }
 
 .checked{
     color: green;
+}
+
+h2{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete{
+    font-size: .9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: purple;
 }

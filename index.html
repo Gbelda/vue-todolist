@@ -19,7 +19,7 @@
                     <img :src="logoImg" alt="">
                 </div>
                 <div class="inputContainer">
-                    <input v-model="newTask" type="text"
+                    <input @keyup.enter="addTask" v-model="newTask" type="text"
                         placeholder="Nuovo Todo"
                         id="inputTodo">
                     <input @click='addTask'type="button" value="Aggiungi"
@@ -27,16 +27,19 @@
                     <h3 v-show='error'>Devi inserire 6 o pi&uacute; caratteri</h3>
                 </div>
             </header>
+            <!-- ./LOGO E TO DO INPUT -->
             <main>
                 <div class="taskContainer">
+                    <h2>
+                        To Do List
+                    </h2>
                     <ul class="card_container" v-show='!noTask'>
                         <li v-for='(task, index) in tasks'>
                             {{task}}
                             <div>
                                 <span>
-                                    <i @click="checked(index)"
-                                        class="fas fa-check-circle"
-                                        :class="{checked:completedTasks.includes(task)}"></i>
+                                    <i @click="checkedTask(index)"
+                                        class="fas fa-check-circle"></i>
                                 </span>
                                 <span @click='removeTask(index)'>
                                     <i class="fas
@@ -51,9 +54,50 @@
                         </h4>
                     </div>
                 </div>
-                <div class="toDoContainer">
+                <!-- ./TO DO SECTION -->
 
+                <div class="completedContainer">
+                    <h2>
+                        Completed
+                    </h2>
+                    <ul v-show='!complete'>
+                        <li v-for="(task, index) in completedTasks">
+                            {{task}}
+                            <div>
+                                <span @click="redoTask(index)">
+                                    <i class="fas fa-redo"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <h4 v-show='complete' class="complete">
+                        Lista completata vuota
+                    </h4>
                 </div>
+                <!-- ./COMPLETED SECTION -->
+
+                <div class="trashbin">
+                    <h2>
+                        Trashed
+                        <span class="delete" @click="deleteAll">
+                            (svuota cestino)
+                        </span>
+                    </h2>
+                    <ul v-show='!emptyBin'>
+                        <li v-for="(task, index) in deletedTasks">
+                            {{task}}
+                            <div>
+                                <span @click="restoreTask(index)">
+                                    <i class="fas fa-trash-restore-alt"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <h4 v-show='emptyBin' class="emptyBin">
+                        Cestino vuoto
+                    </h4>
+                </div>
+                <!-- ./RECYCLEBIN SECTION -->
             </main>
 
 
