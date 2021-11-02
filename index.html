@@ -18,15 +18,20 @@
                 <div class="logo">
                     <img :src="logoImg" alt="">
                 </div>
-                <input type="text" placeholder="Nuovo Todo">
+                <input type="text" placeholder="Nuovo Todo" id="inputTodo">
                 <input type="button" value="Aggiungi">
             </header>
             <ul class="card_container">
-                <li v-for='task in tasks'>
+                <li v-for='(task, index) in tasks'>
                     {{task}}
-                    <span><i class="fas fa-times"></i></span>
+                    <span @click='removeTask(index)'><i class="fas fa-times"></i></span>
                 </li>
             </ul>
+            <div class="noTask">
+                <h4 v-show='error'>
+                    There are no Tasks to do
+                </h4>
+            </div>
 
         </div>
 

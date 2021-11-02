@@ -4,6 +4,33 @@
     margin: 0;
 }
 
-.li{
+#root{
+    width: 60%;
+    margin: auto;
+
+}
+
+li{
     list-style: none
+}
+
+
+.logo img{
+    width: 300px;
+}
+
+header{
+    text-align: center;
+}
+
+#inputTodo{
+    width: 250px;
+    height: 27px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+.noTask{
+    color: red;
 }
