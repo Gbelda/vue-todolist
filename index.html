@@ -24,16 +24,24 @@
                 </div>
             </header>
             <div class="container">
-                <ul class="card_container">
+                <ul class="card_container" v-if='!error'>
                     <li v-for='(task, index) in tasks'>
                         {{task}}
-                        <span @click='removeTask(index)'><i class="fas
-                                fa-times"></i></span>
+                        <div>
+                            <span @click="checked(index)"
+                                :class="{checked:completedTasks.includes(index)}">
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                            <span @click='removeTask(index)'>
+                                <i class="fas
+                                    fa-times"></i>
+                            </span>
+                        </div>
                     </li>
                 </ul>
                 <div class="noTask">
                     <h4 v-show='error'>
-                        There are no Tasks to do
+                        Nulla da fare
                     </h4>
                 </div>
             </div>

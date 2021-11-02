@@ -57,9 +57,17 @@ header{
 
 .noTask{
     color: red;
+    text-align: center;
+    line-height: 150px;
+    
 }
 
 .container{
-    background-color: lightgray;
+    background-color: #F5F7F7;
     border-radius: 7px;
+    min-height: 150px;
+}
+
+.checked{
+    color: green;
 }
