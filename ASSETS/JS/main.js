@@ -2,16 +2,14 @@ const app = new Vue({
     el: '#root',
     data: {
         logoImg: 'https://www.boolean.careers/images/misc/logo.png',
-        noTask: false,
+        noTask: true,
         error: false,
         complete: true,
         emptyBin: true,
         newTask: "",
         completedTasks: [],
         deletedTasks: [],
-        tasks: [
-
-        ],
+        tasks: [],
 
     },
     methods: {
