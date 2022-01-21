@@ -10,9 +10,7 @@ const app = new Vue({
         completedTasks: [],
         deletedTasks: [],
         tasks: [
-            'Fare i compiti',
-            'Fare la spesa',
-            'Fare il bucato'
+
         ],
 
     },

@@ -24,7 +24,7 @@
                         id="inputTodo">
                     <input @click='addTask'type="button" value="Aggiungi"
                         id="submit">
-                    <h3 v-show='error'>Devi inserire 6 o pi&uacute; caratteri</h3>
+                    <h3 v-show='error'>Please insert 6 or more characters!</h3>
                 </div>
             </header>
             <!-- ./LOGO E TO DO INPUT -->
@@ -50,7 +50,7 @@
                     </ul>
                     <div class="noTask">
                         <h4 v-show='noTask'>
-                            Nulla da fare
+                            Add something to do.
                         </h4>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <h2>
                         Trashed
                         <span class="delete" @click="deleteAll">
-                            (svuota cestino)
+                            (Empty Bin)
                         </span>
                     </h2>
                     <ul>
