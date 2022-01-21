@@ -14,11 +14,11 @@
 
 }
 
-ul{
+main > ul{
     padding: 30px 40px;
 }
 
-li{
+main > li{
     list-style: none;
     display: flex;
     justify-content: space-between;

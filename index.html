@@ -16,9 +16,22 @@
         <div id="root">
             <header>
                 <h1>To Do App</h1>
+
+                <div class="functions">
+                    <h4>You can:</h4>
+                    <ul>
+                        <li>Add List</li>
+                        <li>Complete List</li>
+                        <li>Delete List</li>
+                        <li>Recycle Deleted</li>
+                        <li>Redo List</li>
+                    </ul>
+                </div>
+
+
                 <div class="inputContainer">
                     <input @keyup.enter="addTask" v-model="newTask" type="text"
-                        placeholder="Nuovo Todo"
+                        placeholder="New Task"
                         id="inputTodo">
                     <input @click='addTask'type="button" value="Add"
                         id="submit">
