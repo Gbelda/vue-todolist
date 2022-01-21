@@ -75,6 +75,11 @@ h3,
     color: red;
 }
 
+.task{
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
 .taskContainer,
 .completedContainer,
 .trashbin{
@@ -96,6 +101,8 @@ h2{
 
 main{
     display: flex;
+    width: 60%;
+    margin: auto;
     
 }
 

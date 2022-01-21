@@ -15,14 +15,12 @@
     <body>
         <div id="root">
             <header>
-                <div class="logo">
-                    <img :src="logoImg" alt="">
-                </div>
+                <h1>To Do App</h1>
                 <div class="inputContainer">
                     <input @keyup.enter="addTask" v-model="newTask" type="text"
                         placeholder="Nuovo Todo"
                         id="inputTodo">
-                    <input @click='addTask'type="button" value="Aggiungi"
+                    <input @click='addTask'type="button" value="Add"
                         id="submit">
                     <h3 v-show='error'>Please insert 6 or more characters!</h3>
                 </div>
@@ -35,7 +33,7 @@
                     </h2>
                     <ul class="card_container" v-show='!noTask'>
                         <li v-for='(task, index) in tasks'>
-                            {{task}}
+                            <h6 class="task">{{task}}</h6>
                             <div>
                                 <span>
                                     <i @click="checkedTask(index)"
@@ -62,7 +60,7 @@
                     </h2>
                     <ul>
                         <li v-for="(task, index) in completedTasks">
-                            {{task}}
+                            <h6 class="task">{{task}}</h6>
                             <div>
                                 <span @click="redoTask(index)">
                                     <i class="fas fa-redo"></i>
@@ -82,7 +80,7 @@
                     </h2>
                     <ul>
                         <li v-for="(task, index) in deletedTasks">
-                            {{task}}
+                            <h6 class="task">{{task}}</h6>
                             <div>
                                 <span @click="restoreTask(index)">
                                     <i class="fas fa-trash-restore-alt"></i>
